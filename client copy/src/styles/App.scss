@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.result-card {
+  border: solid 1px gray;
+  margin: 1rem;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.short-data {
+  width: 25%;
+  min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 10pt;
+  color: #384459;
+}
+
+.long-data {
+  justify-content: flex-start;
+  padding: 1rem 0;
+
+  label {
+    width: 25%;
+  }
+}
+
+.long-data {
+  justify-content: flex-start;
+}
+
+
+
