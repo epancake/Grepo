@@ -1,32 +1,55 @@
 import React, { useState } from 'react';
 
-const Search = ({getResults}) => {
+const Search = ({getResults, sortResults, results}) => {
 
   const [searchterm, setTerm] = useState('');
+  const [sortMethod, setSort] = useState('relevance');
 
-  const updateField = e => {
-    setTerm(e.target.value);
+  const updateField = event => {
+    setTerm(event.target.value);
   };
 
-  const submitSearch = (event) => {
+  const submitSearch = event => {
     event.preventDefault()
-    getResults(searchterm)
+    getResults(searchterm, sortMethod)
+  }
+
+
+  const setSortMethod = event => {
+    event.preventDefault()
+    setSort(event.target.name)
+    getResults(searchterm, event.target.name)
+  }
+
+  const showSorter = () => {
+    if (results.result) {
+      return (
+        <div className='sorter'>
+          <p>Showing {results.result.items.length} of {results.result.total_count} results,<br/>sorted by {sortMethod}</p>
+          <div className='sort-options'>
+            <button name='relevance' onClick={setSortMethod} className={sortMethod === 'relevance' ? 'active' : 'inactive'}>Sort by Relevance</button>
+            <button name='stars' onClick={setSortMethod} className={sortMethod === 'stars' ? 'active' : 'inactive'}>Sort by Stars</button>
+          </div>
+        </div>
+      )
+    }
   }
 
   return (
-    <div>
-      <form onSubmit={submitSearch}>
-        <label>
-          Searchterm:
-          <input
-            value={searchterm}
-            name="searchterm"
-            onChange={updateField}
-          />
-        </label>
-        <button>Submit</button>
-      </form>
-
+    <div className='searchForm'>
+      <div className='searcher'>
+        <p className='instructions'>Hi, enter a search term for GitHub repos you want to find. We just need a solid lead on the case!</p>
+        <form onSubmit={submitSearch}>
+            <input
+              placeholder='Search Term'
+              value={searchterm}
+              name="searchterm"
+              onChange={updateField}
+            />
+          <button>Submit</button>
+        </form>
+      </div>
+      {showSorter()} 
     </div>
   );
 }

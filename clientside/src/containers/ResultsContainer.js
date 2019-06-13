@@ -22,12 +22,11 @@ const ResultsContainer = ({results}) => {
       </div>
     )
   } else {
-    return (<p>Let's search!</p>)
+    return null
   }
 }
 
 const mapStateToProps = (state, props) => {
-  console.log('state', state)
   return {results: state.results}
 }
 
