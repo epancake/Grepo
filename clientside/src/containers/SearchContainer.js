@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getResults } from '../actions';
-import { sortResults } from '../actions';
 import Search from '../components/Search'
-import Sort from '../components/Sort'
 
 import PropTypes from 'prop-types';
 
-const SearchContainer = ({ getResults, sortResults }) => (
-    <div>
+const SearchContainer = ({ getResults, results }) => {
+
+    return (<div>
       <Search 
-        getResults={getResults}/>     
-      <Sort 
-        sortResults={sortResults}/> 
-    </div>
-  )
+        getResults={getResults}
+        results={results}/>  
+    </div>)
+}
   
   SearchContainer.propTypes = {
     getResults: PropTypes.func.isRequired
   }
   
-  const mapStateToProps = (state, props) => ({
-  })
+  const mapStateToProps = (state, props) => {
+    return {results: state.results}
+  }
   
   const mapDispatchToProps = {
-    getResults,
-    sortResults
+    getResults
   }
   
   export default connect(

@@ -9,10 +9,12 @@ class App extends Component {
    return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to the Github Search Emporium</h1>
+        <h1>Grepo - the Grep for Repos</h1>
       </header>
       <SearchContainer/>
-      <ResultsContainer/>
+      <main className='main-content'>
+        <ResultsContainer/>
+      </main>
     </div>
    );
   }
