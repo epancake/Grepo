@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Search = ({repo, owner, stars, language, description}) => (
+const Search = ({repo, owner, stars, language, description, url}) => (
     <div className='result-card'>
       <div className='data-row'>
         <div className='short-data'>
           <label>Repo:</label>
-          <div>{repo}</div>
+          <div>
+            <a href={url}>{repo}</a>
+          </div>
         </div>
         <div className='short-data'>
           <label>Owner:</label>

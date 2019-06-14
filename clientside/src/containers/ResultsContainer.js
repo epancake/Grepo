@@ -5,6 +5,7 @@ import Result from '../components/Result'
 
 const ResultsContainer = ({results}) => {
   if (results.result) {
+    console.log(results.result)
     return (
       <div className='results-list'>Results:
         {results.result.items.map(result => (
@@ -14,7 +15,8 @@ const ResultsContainer = ({results}) => {
               owner={result.owner.login}
               stars={result.stargazers_count}
               language={result.language}
-              description={result.description}/>
+              description={result.description}
+              url={result.svn_url}/>
         ))}  
       </div>
     )
