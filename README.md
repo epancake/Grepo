@@ -9,4 +9,4 @@ This is a project that allows you to text search for repos using the github api.
 
 You will need to `npm install`, and you may need to start redis.
 
-![Screenshot](screenshot-grepo.png "Sneak Peak")
+![Screenshot](/screenshot-grepo.png, "Sneak Peak")
