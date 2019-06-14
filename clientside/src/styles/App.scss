@@ -87,10 +87,10 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 
   form {
-    padding: 1rem;
+    padding: .5rem;
   }
 }
 
@@ -135,7 +135,8 @@ label {
 .main-content {
   background-image: url('/octocat-detective.png');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 80%;
+  background-position: center top;
   height: 100vh;
   display: flex;
   flex-direction: column;
