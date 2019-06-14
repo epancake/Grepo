@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const Search = ({getResults, sortResults, results}) => {
+const Search = ({getResults, results}) => {
 
   const [searchterm, setTerm] = useState('');
-  const [sortMethod, setSort] = useState('relevance');
+  const [sortMethod, setSort] = useState('score');
 
   const updateField = event => {
     setTerm(event.target.value);
@@ -25,9 +25,9 @@ const Search = ({getResults, sortResults, results}) => {
     if (results.result) {
       return (
         <div className='sorter'>
-          <p>Showing {results.result.items.length} of {results.result.total_count} results,<br/>sorted by {sortMethod}</p>
+          <p>Showing {results.result.items.length} of {results.result.total_count} results,<br/>sorted by {sortMethod === 'score' ? 'relevance' : sortMethod}</p>
           <div className='sort-options'>
-            <button name='relevance' onClick={setSortMethod} className={sortMethod === 'relevance' ? 'active' : 'inactive'}>Sort by Relevance</button>
+            <button name='score' onClick={setSortMethod} className={sortMethod === 'score' ? 'active' : 'inactive'}>Sort by Relevance</button>
             <button name='stars' onClick={setSortMethod} className={sortMethod === 'stars' ? 'active' : 'inactive'}>Sort by Stars</button>
           </div>
         </div>

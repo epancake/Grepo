@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { getResults } from '../actions';
 import Search from '../components/Search'
 
 import PropTypes from 'prop-types';
 
-const SearchContainer = ({ getResults, results }) => {
+const SearchContainer = ({ getResults, results }) => (
+  <div>
+    <Search 
+      getResults={getResults}
+      results={results}/>  
+  </div>
+)
 
-    return (<div>
-      <Search 
-        getResults={getResults}
-        results={results}/>  
-    </div>)
-}
-  
   SearchContainer.propTypes = {
     getResults: PropTypes.func.isRequired
   }

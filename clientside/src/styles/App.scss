@@ -1,3 +1,4 @@
+// standard elements
 body {
   background-color: #211f1e;
 }
@@ -19,9 +20,17 @@ input {
   padding: .3rem .5rem;
 }
 
+label {
+  text-transform: uppercase;
+  font-size: 10pt;
+  color: #384459;
+}
+
 .App {
   text-align: center;
 }
+
+// header
 
 .App-header {
   background-color: #211f1e;
@@ -34,12 +43,7 @@ input {
   color: white;
 }
 
-.main-content {
-  background-image: url('/octocat-detective.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 100vh;
-}
+// form
 
 .instructions {
   color: #ffffff;
@@ -79,18 +83,32 @@ input {
       max-width: 15rem;
       background: #a5a4a4;
     }
-    button.active {
+    button.inactive {
       background: #ffffff;
       outline: none;
-      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-         -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-              box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.19), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    }
+    button.active {
+      -moz-box-shadow:    inset 0 0 10px #000000;
+      -webkit-box-shadow: inset 0 0 10px #000000;
+      box-shadow:         inset 0 0 10px #000000;
+      color: white;
+      border: solid 1px black
     }
     @media (max-width: 900px) { 
       display: flex;
       justify-content: center;
     }
   }
+}
+
+// results
+
+.main-content {
+  background-image: url('/octocat-detective.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
 }
 
 .result-card {
@@ -111,12 +129,6 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-label {
-  text-transform: uppercase;
-  font-size: 10pt;
-  color: #384459;
 }
 
 .long-data {

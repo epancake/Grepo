@@ -8,7 +8,6 @@ export const getResults = (term, sortMethod) => dispatch => {
 }
 
 function get(term, sortMethod) {
-    console.log('request to', `${host}/${sortMethod}/${term}`)
     return fetch(`${host}/${sortMethod}/${term}`, {
         method: 'get',
     }).then(handleResponse)
@@ -26,7 +25,6 @@ function handleResponse(response) {
 }
 
 const receiveResults = (results) => dispatch => {
-    console.log('dispatching', results)
     dispatch({
         type: 'RECEIVE_RESULTS',
         payload: results

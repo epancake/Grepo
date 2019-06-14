@@ -11,22 +11,12 @@ app.use(bodyParser.json());
 apiUrl = 'https://api.github.com/search/repositories'
 
 
-app.get("/relevance/:searchterm", cache.route(), (request, response) => {  
-  fetch(apiUrl + `?q=${request.params.searchterm}&per_page=100`)
+app.get("/:sortMethod/:searchterm", cache.route(), (request, response) => {  
+  fetch(apiUrl + `?q=${request.params.searchterm}&per_page=50&sort=${request.params.sortMethod}`)
     .then(response => response.json())
     .then(data => response.send({ data }))
     .catch(err => console.log("error"));
 });
-
-app.get("/stars/:searchterm", cache.route(), (request, response) => {   
-  fetch(apiUrl + `?q=${request.params.searchterm}&per_page=100&sort=stars`)
-    .then(response => response.json())
-    .then(data => response.send({ data }))
-    .catch(err => console.log("error"));
-});
-
-
-
 
 app.listen(4000, () => {
   console.log("Repo Depot listening on port 4000!");
