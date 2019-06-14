@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Grepo - the Grep for Repos</h1>
-          <a href='www.emilypancake.com' target='blank' rel='noopener noreferrer'><img className='logo' src='/pancake.png' alt='logo'/></a>
+          <a href='https://emilypancake.com/' target='blank' rel='noopener noreferrer'><img className='logo' src='/pancake.png' alt='logo'/></a>
         </header>
         <SearchContainer/>
         <main className='main-content'>
