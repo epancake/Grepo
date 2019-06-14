@@ -137,6 +137,13 @@ label {
   background-repeat: no-repeat;
   background-size: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.results-list {
+  max-width: 1200px;
+  align-self: center;
 }
 
 .result-card {
