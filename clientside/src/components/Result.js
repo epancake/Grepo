@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = ({repo, owner, stars, language, description, url}) => (
     <div className='result-card'>
-      <div className='data-row'>
+      <div className='metadata data-row'>
         <div className='short-data'>
           <label>Repo:</label>
           <div>

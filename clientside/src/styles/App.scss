@@ -169,12 +169,26 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media (max-width: 900px) { 
+    width: auto;
+    justify-content: center;
+  }
+}
+
+.metadata {
+  @media (max-width: 900px) { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .long-data {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem 0;
+  @media (max-width: 900px) { 
+    padding: 1rem;
+  }
 }
 
 .long-data {
