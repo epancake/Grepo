@@ -7,6 +7,10 @@ h1 {
   font-size: 40pt;
   font-weight: bold;
   padding: 1rem;
+  grid-column-start: 2;
+  @media (max-width: 900px) { 
+    font-size: 28pt;
+  }
 }
 
 button {
@@ -35,13 +39,37 @@ label {
 .App-header {
   background-color: #211f1e;
   min-height: 10vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  a {
+    display: flex;
+    justify-content: flex-end;
+    width: 100px;
+    justify-self: flex-end;
+  }
+  .logo {
+    float: right;
+    height: 50px;
+    padding: .5rem;
+    align-self: flex-start;
+  }
+  @media (max-width: 900px) { 
+    display: flex;
+    flex-direction: column-reverse;
+    .logo {
+      height: 20px;
+      align-self: center;
+    }
+    a {
+      justify-content: center;
+    }
+  }
 }
+
 
 // form
 
