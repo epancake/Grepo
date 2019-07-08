@@ -1,4 +1,4 @@
-const host = 'http://localhost:4000'
+const host = 'https://afternoon-hollows-97494.herokuapp.com'
 
 export const getResults = (term, sortMethod) => dispatch => {
     get(term, sortMethod)
